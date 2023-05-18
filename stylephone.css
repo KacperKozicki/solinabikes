@@ -6,7 +6,8 @@ html{
 body {
     /* This just makes sure the whole page is scrollable */
     height: 600vh;
-    display: flex;
+    /* display: flex; */
+    width: 100vw;
     align-items: center;
     justify-content: center;
     margin: 0;
@@ -530,4 +531,52 @@ h1.dark {
   background: -webkit-linear-gradient(#405DE6,#5851DB,#833AB4,#C13584,#E1306C,#FD1D1D,#F56040,#F77737,#FCAF45,#FFDC80);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+
+
+
+
+#container {
+  --target: 100%;
+  width: 100%;
+  background: linear-gradient(to right, #00E061 var(--target), #fff var(--target));
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+#container h1 {
+  color: white;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  text-align: center;
+  letter-spacing: -0.02em;
+  background: linear-gradient(to right, #fff var(--target), #000 var(--target));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 100%;
+  display: block;
+  line-height: 0.95;
+}
+#container h1 span {
+  font-size: 0.5em;
+  display: block;
+}
+
+h1 img{
+  margin-top: 50px;
+  width: 200px;
+}
+.gsap-marker-end{display: none!important}
+.gsap-marker-start{display: none!important;}
+
+.gsap-marker-scroller-end{display: none!important;}
+.gsap-marker-scroller-start{display: none!important;}
+
+.empty{
+  margin-top: 215vh;
+  height: 400px* 4;
+  width: 100%;
+  background-color: #077ce937;
 }

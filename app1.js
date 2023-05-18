@@ -73,15 +73,12 @@ $(document).scroll((e) => {
     $(".fake-image").addClass("hole-effect");
     video.play();
     fake.style.position = "absolute";
-    // fake.style.left="calc(50% - 100px)";
     fake.style.top = "130%";
-
-    
   } else {
+    $(".fake-image").removeClass("hole-effect");
+    video.pause();
     fake.style.position = "fixed";
     fake.style.top = "calc(50% - 200px)";
-
-    
   }
 });
 
@@ -167,3 +164,25 @@ document.addEventListener('DOMContentLoaded', function() {
 //   document.body.classList.toggle('dark');
 //   nav.classList.toggle('dark');
 // });
+
+///
+
+console.clear();
+gsap.config({ trialWarn: false });
+gsap.registerPlugin(ScrollTrigger);
+gsap.to("#container", {
+  "--target": "0%",
+  ease: "none",
+  scrollTrigger: {
+    trigger: "#container",
+    markers: {
+      startColor: "yellow",
+      endColor: "red",
+      fontSize: "14px"
+    },
+    start: "top top",
+    end: "+=1000",
+    pin: true,
+    scrub: 1
+  }
+});
